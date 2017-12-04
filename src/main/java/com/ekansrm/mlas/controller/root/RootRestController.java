@@ -6,15 +6,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-public class RootController {
+public class RootRestController {
 
   @RequestMapping(
       value = "/",
-      method = RequestMethod.GET,
-      produces = "application/json;charset=UTF-8"
+      method = RequestMethod.GET
   )
   public String root() {
-    return "Machine Learning as Service";
+    return "<h1>Machine Learning as Service</h1>";
   }
 
 }
