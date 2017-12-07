@@ -14,23 +14,11 @@ import org.springframework.web.socket.handler.PerConnectionWebSocketHandler;
  */
 @Configuration
 @EnableWebSocket
-@EnableWebSocketMessageBroker
-public class AboutWebSocketConfig extends AbstractWebSocketMessageBrokerConfigurer implements WebSocketConfigurer{
+public class AboutWebSocketConfig implements WebSocketConfigurer{
 
   @Override
   public void registerWebSocketHandlers(WebSocketHandlerRegistry registry) {
     registry.addHandler(webSocketHandler(), "/about").setAllowedOrigins("*").withSockJS();
-  }
-
-  @Override
-  public void registerStompEndpoints(StompEndpointRegistry stompEndpointRegistry) {
-    stompEndpointRegistry.addEndpoint("/stomp").withSockJS();
-  }
-
-  @Override
-  public void configureMessageBroker(MessageBrokerRegistry config) {
-    config.enableSimpleBroker("/topic");
-    config.setApplicationDestinationPrefixes("/app");
   }
 
   @Bean

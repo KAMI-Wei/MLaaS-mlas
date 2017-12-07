@@ -31,6 +31,7 @@ public class AboutWebSocketHandler extends TextWebSocketHandler {
       broadcast(String.valueOf(sessions.size()));
     }
   }
+
   private void broadcast(String message) {
     for (WebSocketSession session : sessions) {
       try {
