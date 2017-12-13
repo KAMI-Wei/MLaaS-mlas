@@ -22,7 +22,7 @@ public class AboutRestController {
       produces = "application/json;charset=UTF-8"
   )
   public String about() {
-    return gson.toJson(Response.successResponse("MLasS 是实现将机器学习模型部署到线上的一个脚手架"));
+    return gson.toJson(Response.successResponse("MLaaS 是实现将机器学习模型部署到线上的一个脚手架"));
   }
 
 
